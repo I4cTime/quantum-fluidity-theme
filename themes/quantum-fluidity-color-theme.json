@@ -1,6 +1,40 @@
 {
   "name": "Quantum Fluidity",
   "type": "dark",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "class": {
+      "foreground": "#00D1FF",
+      "bold": true
+    },
+    "interface": {
+      "foreground": "#00D1FF",
+      "italic": true
+    },
+    "function": {
+      "foreground": "#B266FF",
+      "italic": true
+    },
+    "method": {
+      "foreground": "#B266FF",
+      "italic": true
+    },
+    "variable.readonly": {
+      "foreground": "#F8F9FA",
+      "bold": true
+    },
+    "variable.defaultLibrary": {
+      "foreground": "#00D1FF",
+      "bold": true
+    },
+    "property": {
+      "foreground": "#F8F9FA"
+    },
+    "parameter": {
+      "foreground": "#00D1FF",
+      "italic": true
+    }
+  },
   "colors": {
     "editor.background": "#050505",
     "editor.foreground": "#F8F9FA",
@@ -106,7 +140,27 @@
     "scrollbarSlider.background": "#1A1A2E80",
     "scrollbarSlider.hoverBackground": "#1A1A2E",
     "scrollbarSlider.activeBackground": "#00D1FF80",
-    "scrollbar.shadow": "#050505"
+    "scrollbar.shadow": "#050505",
+    "editorBracketHighlight.foreground1": "#00D1FF",
+    "editorBracketHighlight.foreground2": "#4A8CFF",
+    "editorBracketHighlight.foreground3": "#8070FF",
+    "editorBracketHighlight.foreground4": "#B266FF",
+    "editorBracketHighlight.foreground5": "#B266FF",
+    "editorBracketHighlight.foreground6": "#B266FF",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#FF0055",
+    "editorOverviewRuler.border": "#1A1A2E",
+    "editorOverviewRuler.findMatchForeground": "#00D1FF80",
+    "editorOverviewRuler.errorForeground": "#FF0055",
+    "editorOverviewRuler.warningForeground": "#FFB800",
+    "editorOverviewRuler.infoForeground": "#00D1FF",
+    "editorOverviewRuler.bracketMatchForeground": "#B266FF",
+    "minimap.findMatchHighlight": "#00D1FF",
+    "minimap.selectionHighlight": "#1A1A2E",
+    "minimap.errorHighlight": "#FF0055",
+    "minimap.warningHighlight": "#FFB800",
+    "minimapGutter.addedBackground": "#00E676",
+    "minimapGutter.modifiedBackground": "#00D1FF",
+    "minimapGutter.deletedBackground": "#FF0055"
   },
   "tokenColors": [
     {
@@ -157,7 +211,8 @@
         "storage.modifier"
       ],
       "settings": {
-        "foreground": "#B266FF"
+        "foreground": "#B266FF",
+        "fontStyle": "bold"
       }
     },
     {
@@ -267,7 +322,8 @@
         "support.type.sys-types"
       ],
       "settings": {
-        "foreground": "#00D1FF"
+        "foreground": "#00D1FF",
+        "fontStyle": "bold"
       }
     },
     {
