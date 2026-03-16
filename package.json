@@ -1,0 +1,27 @@
+{
+  "name": "quantum-fluidity-theme",
+  "displayName": "Quantum Fluidity",
+  "description": "A crisp, high-contrast dark theme with luminous accents, based on the Quantum Fluidity palette.",
+  "version": "1.0.0",
+  "publisher": "i4cdeath",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i4cdeath/quantum-fluidity-theme"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Quantum Fluidity",
+        "uiTheme": "vs-dark",
+        "path": "./themes/quantum-fluidity-color-theme.json"
+      }
+    ]
+  }
+}
