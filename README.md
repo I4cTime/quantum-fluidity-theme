@@ -1,6 +1,14 @@
-# Quantum Fluidity Theme
+# Quantum Fluidity Cursor Theme
 
 A crisp, high-contrast dark theme with luminous accents, designed for a development environment that feels both quantum and agentic.
+
+## Previews
+
+### Quantum Fluidity (Dark)
+![Dark Theme Preview](images/dark-preview.png)
+
+### Quantum Fluidity Light
+![Light Theme Preview](images/light-preview.png)
 
 ## Palette
 

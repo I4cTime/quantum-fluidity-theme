@@ -1,0 +1,41 @@
+/* Quantum Fluidity Design System Variables */
+@theme inline {
+  --color-background: #050505;
+  --color-foreground: #F8F9FA;
+  --color-quantum-cyan: #00D1FF;
+  --color-quantum-violet: #B266FF;
+  --shadow-quantum: 0 0 20px rgba(0, 209, 255, 0.15);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  margin: 0;
+  padding: 2rem;
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid oklch(1 0 0 / 8%);
+  border-radius: 0.75rem;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-quantum);
+}
+
+#wave-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+/* Agentic Gradient Animation */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
