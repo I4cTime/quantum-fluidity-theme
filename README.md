@@ -1,5 +1,6 @@
 <div align="center">
-  <h1>🌌 Quantum Fluidity</h1>
+  <img src="icon.png" width="128" height="128" alt="Quantum Fluidity Logo" />
+  <h1>Quantum Fluidity</h1>
   <p><b>A crisp, high-contrast theme designed for a development environment that feels both <i>quantum</i> and <i>agentic</i>.</b></p>
 </div>
 
