@@ -13,10 +13,11 @@ Whether you are building complex React interfaces, writing backend logic, or des
 ## ✨ Features
 
 - **Dual Modes:** Includes both the signature `Obsidian Void` dark mode and a high-contrast `Ghost White` light mode.
-- **Semantic Highlighting:** Deep integration with language servers to intelligently colorize classes, interfaces, and methods based on their actual structural meaning, not just regex patterns.
+- **Semantic Highlighting:** Deep integration with language servers to intelligently colorize classes, interfaces, enums, type parameters, decorators, and methods based on their actual structural meaning, not just regex patterns. Deprecated symbols are struck through.
 - **Typographic Hierarchy:** Bold keywords and italicized parameters/attributes give your code a flowing, readable texture.
-- **Quantum Brackets:** Nested brackets use a high-tech gradient to map the depth of your code seamlessly.
-- **Agentic UI:** Fully customized editor UI, from the Midnight Mist file explorer selection states to the glowing Electric Cyan active tabs.
+- **Quantum Brackets:** Nested brackets ramp through a full six-level cyan → violet → pink gradient that maps the depth of your code seamlessly, with a matching-bracket glow to anchor your cursor.
+- **Agentic Polish:** Purpose-built for Cursor and AI workflows — inline AI suggestions (ghost text) and TypeScript inlay hints are styled on-palette so generated code reads as cleanly as code you wrote yourself.
+- **Agentic UI:** Fully customized editor UI, from the Midnight Mist file explorer selection states to the glowing Electric Cyan active tabs — extending to menus, peek views, notifications, the command palette, and git-decorated file colors.
 
 ## 📸 Previews
 
