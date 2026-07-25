@@ -1,0 +1,66 @@
+name: Feature Request
+description: Suggest a new variant, palette tweak, or enhancement for Quantum Fluidity
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea for Quantum Fluidity? We'd love to hear it.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the theme does this relate to?
+      options:
+        - New variant / palette
+        - Syntax highlighting (semantic tokens)
+        - Workbench / UI colors
+        - Editor support (new language, new IDE)
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What problem does this solve, or what would look/read better?
+      placeholder: "I'm always frustrated when..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe what you'd like to happen. Palette swatches, screenshots of similar themes, or hex values are welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+
+  - type: dropdown
+    id: willing
+    attributes:
+      label: Would you be willing to submit a PR?
+      options:
+        - "Yes"
+        - "Yes, with guidance"
+        - "No"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else — mockups, links, related issues, etc.
+    validations:
+      required: false

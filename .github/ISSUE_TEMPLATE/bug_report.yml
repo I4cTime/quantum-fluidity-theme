@@ -1,0 +1,100 @@
+name: Bug Report
+description: Report a rendering issue or bug in the Quantum Fluidity theme
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill out the details below.
+
+        **If this is a security vulnerability, do NOT open an issue.** Use our [security reporting process](https://github.com/I4cTime/quantum-fluidity-theme/security/advisories/new) instead.
+
+  - type: input
+    id: version
+    attributes:
+      label: Theme version
+      description: "Check the extension's version in your editor's Extensions panel, or `package.json` if built from source."
+      placeholder: "2.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: variant
+    attributes:
+      label: Variant
+      description: Which theme variant shows the issue?
+      options:
+        - Quantum Fluidity (Dark / Obsidian Void)
+        - Quantum Fluidity Mist (Dark)
+        - Quantum Fluidity Light
+        - Quantum Fluidity Dawn (Light)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: editor
+    attributes:
+      label: Editor
+      options:
+        - VS Code
+        - Cursor
+        - Kiro
+        - Other (VS Code-compatible)
+    validations:
+      required: true
+
+  - type: input
+    id: editor-version
+    attributes:
+      label: Editor version
+      placeholder: "1.95.0"
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Language / file type affected
+      description: Which language server or file type shows the incorrect highlighting?
+      placeholder: "TypeScript, Python, Rust, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the bug — incorrect colors, missing highlighting, low contrast, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected appearance
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual appearance
+      description: Include a screenshot if possible — visual bugs are much easier to diagnose with one.
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "Ubuntu 24.04 / macOS 15.3 / Windows 11"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Any other context — related issues, custom editor settings, etc.
+    validations:
+      required: false
