@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same ref (e.g. rapid PR pushes) to save minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Build themes
+        run: npm run build
+
+      # themes/*.json are generated from src/ — fail if someone edited them by
+      # hand or forgot to rebuild after a palette change.
+      - name: Verify generated themes are in sync
+        run: git diff --exit-code themes/
+
+      - name: Contrast audit (WCAG)
+        run: npm run check
+
+      - name: Package (dry run)
+        run: npx --yes @vscode/vsce package

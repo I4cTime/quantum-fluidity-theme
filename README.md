@@ -1,23 +1,31 @@
 <div align="center">
   <img src="icon.png" width="128" height="128" alt="Quantum Fluidity Logo" />
   <h1>Quantum Fluidity</h1>
-  <p><b>A crisp, high-contrast theme designed for a development environment that feels both <i>quantum</i> and <i>agentic</i>.</b></p>
+  <p><b>A crisp, high-contrast theme family designed for a development environment that feels both <i>quantum</i> and <i>agentic</i>.</b></p>
 </div>
 
 ---
 
-**Quantum Fluidity** is a highly opinionated, dual-mode (Dark & Light) color theme built for VS Code and Cursor. It was designed from the ground up to reduce eye strain while providing vivid, structural syntax highlighting that makes object-oriented and functional code extremely easy to parse.
+**Quantum Fluidity** is a highly opinionated color theme family for **VS Code**, **Cursor**, and **Kiro**. Four variants — two dark, two light — share one design system: vivid structural syntax highlighting that makes object-oriented and functional code extremely easy to parse, with WCAG-audited contrast in every variant.
 
-Whether you are building complex React interfaces, writing backend logic, or designing AI-driven agentic workflows, this theme brings a subtle glow and sharp readability to your editor.
+## 🌗 The Four Variants
+
+| Variant | Mode | Vibe |
+| :--- | :--- | :--- |
+| **Quantum Fluidity** | Dark | The signature `Obsidian Void` — pure-black foundation, maximum neon punch. |
+| **Quantum Fluidity Mist** | Dark | `Midnight Mist` navy surfaces with gentler neons — cozier for long sessions and dim rooms. |
+| **Quantum Fluidity Light** | Light | `Ghost White` — cool, crisp, high-contrast daylight coding. |
+| **Quantum Fluidity Dawn** | Light | Warm paper surfaces with earthy quantum accents — easy on the eyes in bright environments. |
 
 ## ✨ Features
 
-- **Dual Modes:** Includes both the signature `Obsidian Void` dark mode and a high-contrast `Ghost White` light mode.
+- **2 × 2 modes:** Two dark and two light variants, all generated from a single palette source so they stay perfectly in sync.
+- **WCAG-audited:** Every syntax color clears 4:1 contrast against its background (7:1+ for body text); brackets and hints clear 3:1. Verified by an automated check (`npm run check`).
 - **Semantic Highlighting:** Deep integration with language servers to intelligently colorize classes, interfaces, enums, type parameters, decorators, and methods based on their actual structural meaning, not just regex patterns. Deprecated symbols are struck through.
 - **Typographic Hierarchy:** Bold keywords and italicized parameters/attributes give your code a flowing, readable texture.
-- **Quantum Brackets:** Nested brackets ramp through a full six-level cyan → violet → pink gradient that maps the depth of your code seamlessly, with a matching-bracket glow to anchor your cursor.
-- **Agentic Polish:** Purpose-built for Cursor and AI workflows — inline AI suggestions (ghost text) and TypeScript inlay hints are styled on-palette so generated code reads as cleanly as code you wrote yourself.
-- **Agentic UI:** Fully customized editor UI, from the Midnight Mist file explorer selection states to the glowing Electric Cyan active tabs — extending to menus, peek views, notifications, the command palette, and git-decorated file colors.
+- **Quantum Brackets:** Nested brackets ramp through a full six-level cyan → violet → pink gradient that maps the depth of your code, with a matching-bracket glow to anchor your cursor.
+- **Agentic Polish:** Purpose-built for AI-first editors — inline AI suggestions (ghost text) and inlay hints are styled on-palette so generated code reads as cleanly as code you wrote yourself.
+- **Full UI Coverage:** Menus, peek views, notifications, command palette, git decorations, merge conflicts, sticky scroll, debug and testing icons, terminal ANSI — all themed.
 
 ## 📸 Previews
 
@@ -29,25 +37,56 @@ Whether you are building complex React interfaces, writing backend logic, or des
 
 ## 🎨 The Palette
 
-The theme is built upon a carefully curated "Quantum" design system:
+The theme family is built upon a carefully curated "Quantum" design system. Each role keeps its meaning across all four variants:
 
-| Color | Hex (Dark) | Hex (Light) | Role / Vibe |
-| :--- | :--- | :--- | :--- |
-| **Obsidian Void / Ghost White** | `#050505` | `#F8F9FA` | The "Crisp" foundation; pure, deep, and stable backgrounds. |
-| **Electric Cyan / Azure Blue** | `#00D1FF` | `#0066CC` | Represents "Future" and "Quantum" energy. (Functions, Methods, Borders) |
-| **Hyper-Violet / Purple** | `#B266FF` | `#9933FF` | Adds "Agentic" depth and a sense of intelligence. (Keywords, Operators, Badges) |
-| **Neon Emerald / Forest Green**| `#00E676` | `#00B359` | Structural distinction. (Classes, Interfaces) |
-| **Neon Amber / Goldenrod** | `#FFB800` | `#D99900` | Logical primitives. (Numbers, Constants, Arguments) |
-| **Quantum Pink / Crimson** | `#FF0055` | `#CC0044` | High contrast alerts and semantic literals. (Strings, HTML Tags, Errors) |
-| **Midnight Mist / Slate** | `#1A1A2E` | `#E5E7EB` | Used for containers, file explorers, and hover states to create "Fluid Motion". |
+| Role | Void (Dark) | Mist (Dark) | Light | Dawn (Light) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Foundation** (backgrounds) | `#050505` | `#131324` | `#F8F9FA` | `#FAF5EC` |
+| **Electric Cyan** (functions, cursor, borders) | `#00D1FF` | `#3BD5FF` | `#007399` | `#0E7490` |
+| **Hyper-Violet** (keywords, operators, badges) | `#B266FF` | `#BE83FF` | `#7C24D9` | `#8B2FC9` |
+| **Neon Emerald** (classes, types) | `#00E676` | `#2EE68A` | `#067A43` | `#2E7D32` |
+| **Neon Amber** (numbers, constants) | `#FFB800` | `#FFC53D` | `#A36A00` | `#A05A08` |
+| **Quantum Pink** (strings, tags, errors) | `#FF0055` | `#FF4D7E` | `#CC0044` | `#B3264A` |
+| **Containers** (mist surfaces, hovers) | `#1A1A2E` | `#262645` | `#E5E7EB` | `#E7DCC8` |
 
 ## 🚀 Installation
 
-### In Cursor / VS Code
-1. Open the Extensions sidebar panel (`Ctrl+Shift+X` on Windows/Linux, `Cmd+Shift+X` on Mac).
-2. Search for `Quantum Fluidity`.
-3. Click **Install**.
-4. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`), type `Color Theme`, and select either **Quantum Fluidity** or **Quantum Fluidity Light**.
+### VS Code
+1. Open the Extensions panel (`Ctrl+Shift+X` / `Cmd+Shift+X`).
+2. Search for `Quantum Fluidity` and click **Install**.
+3. `Ctrl+K Ctrl+T` (or Command Palette → `Color Theme`) and pick your variant.
+
+### Cursor
+Cursor reads the same extension format. Search `Quantum Fluidity` in Cursor's Extensions panel (served via its marketplace mirror / Open VSX), or install the `.vsix` manually (below).
+
+### Kiro
+Kiro consumes extensions from **Open VSX**. Search `Quantum Fluidity` in Kiro's extensions view, or use the manual `.vsix` install.
+
+### Manual (.vsix) — works in all three IDEs
+1. Grab the latest `.vsix` from [Releases](https://github.com/I4cTime/quantum-fluidity-theme/releases), or build it yourself: `npm run package`.
+2. Command Palette → `Extensions: Install from VSIX...` → select the file.
+
+## 🛠️ Development
+
+The four theme JSONs are **generated** — don't edit `themes/*.json` by hand.
+
+```bash
+npm run build    # regenerate themes/*.json from src/palettes.mjs
+npm run check    # WCAG contrast audit (fails CI on regression)
+npm run package  # build + check + create .vsix
+```
+
+- `src/palettes.mjs` — the single source of truth: one flat palette object per variant.
+- `src/template.mjs` — maps a palette onto the full VS Code theme structure (workbench colors, semantic tokens, TextMate scopes).
+- `src/check-contrast.mjs` — WCAG luminance-contrast audit for every palette.
+
+To add a fifth variant: add a palette object, `npm run build`, add the theme entry to `package.json`.
+
+### Releasing
+
+CI (`.github/workflows/ci.yml`) runs on every push/PR: regenerates themes, fails if `themes/*.json` were hand-edited, runs the contrast audit, and does a dry-run package.
+
+Pushing a `v*` tag (e.g. `git tag v2.0.0 && git push origin v2.0.0`) triggers `.github/workflows/release.yml`, which publishes the same `.vsix` to **both** the VS Code Marketplace and **Open VSX** (where Cursor and Kiro install from), and attaches it to a GitHub Release. Requires two repo secrets: `VSCE_PAT` (Azure DevOps, Marketplace → Manage scope) and `OVSX_PAT` (open-vsx.org token; create the `I4cTime` namespace once with `npx ovsx create-namespace`).
 
 ---
 

@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ring" x1="120" y1="110" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00D1FF"/>
+      <stop offset="0.55" stop-color="#B266FF"/>
+      <stop offset="1" stop-color="#FF0055"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#1A1A2E"/>
+      <stop offset="0.55" stop-color="#0B0B14"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Obsidian Void badge -->
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#bg)"/>
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="none" stroke="#2A2A4E" stroke-width="3"/>
+
+  <!-- Faint elliptical orbit (quantum) -->
+  <g transform="rotate(-28 256 246)">
+    <ellipse cx="256" cy="246" rx="206" ry="78" fill="none" stroke="url(#ring)" stroke-width="4" opacity="0.35"/>
+  </g>
+</svg>

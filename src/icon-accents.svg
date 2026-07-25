@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Electron riding the Q's ring, top-left -->
+  <circle cx="148" cy="130" r="22" fill="#00D1FF" filter="url(#softglow)" opacity="0.9"/>
+  <circle cx="148" cy="130" r="12" fill="#FFFFFF"/>
+
+  <!-- Second electron on the elliptical orbit, lower right -->
+  <circle cx="428" cy="330" r="13" fill="#FF0055" filter="url(#softglow)" opacity="0.9"/>
+  <circle cx="428" cy="330" r="6.5" fill="#FFD1E0"/>
+</svg>

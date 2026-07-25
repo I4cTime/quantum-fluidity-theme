@@ -1,9 +1,10 @@
 {
   "name": "quantum-fluidity-theme",
   "displayName": "Quantum Fluidity",
-  "description": "A crisp, high-contrast dark theme with luminous accents, based on the Quantum Fluidity palette.",
-  "version": "1.1.0",
+  "description": "A crisp, high-contrast theme family with luminous accents — 2 dark and 2 light variants for VS Code, Cursor, and Kiro.",
+  "version": "2.0.0",
   "publisher": "I4cTime",
+  "license": "MIT",
   "icon": "icon.png",
   "repository": {
     "type": "git",
@@ -15,6 +16,21 @@
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "dark",
+    "light",
+    "neon",
+    "quantum",
+    "cursor",
+    "kiro",
+    "high contrast"
+  ],
+  "galleryBanner": {
+    "color": "#050505",
+    "theme": "dark"
+  },
   "contributes": {
     "themes": [
       {
@@ -23,10 +39,28 @@
         "path": "./themes/quantum-fluidity-color-theme.json"
       },
       {
+        "label": "Quantum Fluidity Mist",
+        "uiTheme": "vs-dark",
+        "path": "./themes/quantum-fluidity-mist-color-theme.json"
+      },
+      {
         "label": "Quantum Fluidity Light",
         "uiTheme": "vs",
         "path": "./themes/quantum-fluidity-light-color-theme.json"
+      },
+      {
+        "label": "Quantum Fluidity Dawn",
+        "uiTheme": "vs",
+        "path": "./themes/quantum-fluidity-dawn-color-theme.json"
       }
     ]
+  },
+  "scripts": {
+    "build": "node src/build.mjs",
+    "build:icon": "bash src/build-icon.sh",
+    "check": "node src/check-contrast.mjs",
+    "package": "npm run build && npm run check && npx @vscode/vsce package",
+    "publish:vscode": "npx @vscode/vsce publish",
+    "publish:openvsx": "npx ovsx publish"
   }
 }

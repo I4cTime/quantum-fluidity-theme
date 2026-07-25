@@ -1,0 +1,66 @@
+name: Release
+
+# Publishes to BOTH marketplaces when a version tag is pushed:
+#   git tag v2.0.0 && git push origin v2.0.0
+#
+# Required repository secrets:
+#   VSCE_PAT — Azure DevOps PAT with Marketplace → Manage scope
+#              (https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+#   OVSX_PAT — open-vsx.org access token; the I4cTime namespace must exist
+#              (npx ovsx create-namespace I4cTime -p <token>, one-time)
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write # create the GitHub Release + upload the .vsix
+
+concurrency:
+  group: release-${{ github.ref }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Verify tag matches package.json version
+        run: |
+          PKG_VERSION="$(node -p "require('./package.json').version")"
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match package.json version $PKG_VERSION" >&2
+            exit 1
+          fi
+
+      - name: Build themes
+        run: npm run build
+
+      - name: Verify generated themes are in sync
+        run: git diff --exit-code themes/
+
+      - name: Contrast audit (WCAG)
+        run: npm run check
+
+      - name: Package
+        run: npx --yes @vscode/vsce package
+
+      - name: Publish to VS Code Marketplace
+        run: npx --yes @vscode/vsce publish --packagePath ./*.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
+      # Cursor and Kiro install from Open VSX — publish the identical .vsix there.
+      - name: Publish to Open VSX
+        run: npx --yes ovsx publish ./*.vsix
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+
+      - name: Create GitHub Release with .vsix asset
+        run: gh release create "$GITHUB_REF_NAME" ./*.vsix --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
