@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Quantum Fluidity mark, monochrome cut (single Electric Cyan, no gradient
+       or glow) for contexts that need one flat color. Canonical geometry: mark.svg. -->
+  <defs>
+    <mask id="qbehindm" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <circle cx="246" cy="246" r="130" stroke="#000" stroke-width="58"/>
+      <path d="M262 306 C 318 292, 296 366, 354 358 C 404 352, 404 404, 426 426" stroke="#000" stroke-width="58" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <g mask="url(#qbehindm)">
+    <ellipse cx="246" cy="246" rx="196" ry="62" transform="rotate(-28 246 246)" stroke="#00D1FF" stroke-width="9" opacity="0.85"/>
+  </g>
+  <g stroke="#00D1FF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="246" cy="246" r="130"/>
+    <path d="M262 306 C 318 292, 296 366, 354 358 C 404 352, 404 404, 426 426"/>
+  </g>
+  <circle cx="418" cy="152" r="17" fill="#00D1FF"/>
+  <circle cx="418" cy="152" r="8" fill="#FFFFFF"/>
+  <circle cx="72" cy="338" r="11" fill="#00D1FF"/>
+  <circle cx="72" cy="338" r="5" fill="#FFFFFF"/>
+</svg>

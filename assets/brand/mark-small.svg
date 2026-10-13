@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Quantum Fluidity mark, small-size cut (favicons / <=48px): orbit,
+       electrons and glow layers dropped; strokes thickened so the Q and its
+       wave tail stay legible at 16-32px. Canonical geometry: mark.svg. -->
+  <defs>
+    <linearGradient id="qgs" gradientUnits="userSpaceOnUse" x1="104" y1="96" x2="440" y2="448">
+      <stop offset="0" stop-color="#00D1FF"/>
+      <stop offset="0.5" stop-color="#B266FF"/>
+      <stop offset="1" stop-color="#FF0055"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#qgs)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="246" cy="236" r="132"/>
+    <path d="M270 300 C 326 286, 304 360, 362 352 C 412 346, 412 398, 434 420"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+Space Grotesk (c) Florian Karsten — SIL Open Font License 1.1
+JetBrains Mono (c) JetBrains — SIL Open Font License 1.1
+
+These TTFs are vendored only for offline brand-asset generation
+(scripts/generate-brand-assets.mjs); the site itself loads the same
+families via next/font. License: https://openfontlicense.org

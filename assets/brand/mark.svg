@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Quantum Fluidity mark ("Fluid Q"): a neon-tube Q whose tail flows out as
+       a wave, one electron orbit passing behind the tube, two electrons.
+       Stroke gradient = the theme's bracket ramp (Electric Cyan -> Hyper-Violet
+       -> Quantum Pink, see src/palettes.mjs "void"). Canonical source for
+       icon.png, the social cards and the README hero: src/build-brand.mjs. -->
+  <defs>
+    <linearGradient id="qg" gradientUnits="userSpaceOnUse" x1="104" y1="96" x2="440" y2="448">
+      <stop offset="0" stop-color="#00D1FF"/>
+      <stop offset="0.5" stop-color="#B266FF"/>
+      <stop offset="1" stop-color="#FF0055"/>
+    </linearGradient>
+    <!-- Hides the orbit where it passes behind the tube (neon-sign overlap gap). -->
+    <mask id="qbehind" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <circle cx="246" cy="246" r="130" stroke="#000" stroke-width="58"/>
+      <path d="M262 306 C 318 292, 296 366, 354 358 C 404 352, 404 404, 426 426" stroke="#000" stroke-width="58" stroke-linecap="round"/>
+    </mask>
+    <filter id="qglow-wide" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="qglow-tight" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <g id="qart">
+      <g mask="url(#qbehind)">
+        <ellipse cx="246" cy="246" rx="196" ry="62" transform="rotate(-28 246 246)" stroke="#00D1FF" stroke-width="9" opacity="0.85"/>
+      </g>
+      <g stroke="url(#qg)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="246" cy="246" r="130"/>
+        <path d="M262 306 C 318 292, 296 366, 354 358 C 404 352, 404 404, 426 426"/>
+      </g>
+      <circle cx="418" cy="152" r="17" fill="#00D1FF"/>
+      <circle cx="418" cy="152" r="8" fill="#FFFFFF"/>
+      <circle cx="72" cy="338" r="11" fill="#FF0055"/>
+      <circle cx="72" cy="338" r="5" fill="#FFD1E0"/>
+    </g>
+  </defs>
+  <use href="#qart" filter="url(#qglow-wide)" opacity="0.75"/>
+  <use href="#qart" filter="url(#qglow-tight)" opacity="0.9"/>
+  <use href="#qart"/>
+</svg>

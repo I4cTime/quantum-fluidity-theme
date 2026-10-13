@@ -18,9 +18,9 @@
 
 - [ ] `npm run build` regenerates `themes/*.json` cleanly (`git diff themes/` is empty)
 - [ ] `npm run check` (WCAG contrast audit) passes
-- [ ] Verified the theme renders correctly in VS Code / Cursor / Kiro — screenshot attached for any visual change
+- [ ] Verified the theme renders correctly in VS Code / Cursor / Kiro - screenshot attached for any visual change
 - [ ] `CHANGELOG.md` updated under `[Unreleased]` (for user-facing changes)
 
 ## Breaking changes
 
-<!-- None — or describe the impact and migration steps. -->
+<!-- None - or describe the impact and migration steps. -->

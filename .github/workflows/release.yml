@@ -4,9 +4,9 @@ name: Release
 #   git tag v2.0.0 && git push origin v2.0.0
 #
 # Required repository secrets:
-#   VSCE_PAT — Azure DevOps PAT with Marketplace → Manage scope
+#   VSCE_PAT - Azure DevOps PAT with Marketplace → Manage scope
 #              (https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
-#   OVSX_PAT — open-vsx.org access token; the I4cTime namespace must exist
+#   OVSX_PAT - open-vsx.org access token; the I4cTime namespace must exist
 #              (npx ovsx create-namespace I4cTime -p <token>, one-time)
 on:
   push:
@@ -27,6 +27,9 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: "22"
+          cache: npm
+
+      - run: npm ci
 
       - name: Verify tag matches package.json version
         run: |
@@ -54,7 +57,7 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
-      # Cursor and Kiro install from Open VSX — publish the identical .vsix there.
+      # Cursor and Kiro install from Open VSX - publish the identical .vsix there.
       - name: Publish to Open VSX
         run: npx --yes ovsx publish ./*.vsix
         env:
