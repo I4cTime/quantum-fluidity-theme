@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write # create the GitHub Release + upload the .vsix
+  id-token: write # Open VSX trusted publishing (OIDC)
 
 concurrency:
   group: release-${{ github.ref }}
@@ -52,16 +53,21 @@ jobs:
       - name: Package
         run: npx --yes @vscode/vsce package
 
+      # Cursor and Kiro install from Open VSX - publish the identical .vsix there.
+      - name: Publish to Open VSX (trusted publishing)
+        run: npx --yes ovsx@^1.2 publish --trusted-publishing ./*.vsix
+
       - name: Publish to VS Code Marketplace
+        if: env.VSCE_PAT != ''
         run: npx --yes @vscode/vsce publish --packagePath ./*.vsix
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
-      # Cursor and Kiro install from Open VSX - publish the identical .vsix there.
-      - name: Publish to Open VSX
-        run: npx --yes ovsx publish ./*.vsix
+      - name: Marketplace skipped
+        if: env.VSCE_PAT == ''
+        run: echo "::notice::VSCE_PAT secret not set, skipped the VS Code Marketplace publish."
         env:
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
       - name: Create GitHub Release with .vsix asset
         run: gh release create "$GITHUB_REF_NAME" ./*.vsix --generate-notes
