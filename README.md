@@ -99,7 +99,7 @@ To add a fifth variant: add a palette object, run `npm run build`, add the theme
 
 CI (`.github/workflows/ci.yml`) runs on every push and PR: regenerates the themes, fails if `themes/*.json` were hand-edited, runs the contrast audit, and does a dry-run package.
 
-Pushing a `v*` tag (for example `git tag v2.1.0 && git push origin v2.1.0`) triggers `.github/workflows/release.yml`, which publishes the same `.vsix` to **both** the VS Code Marketplace and **Open VSX** (where Cursor and Kiro install from), and attaches it to a GitHub Release. It needs two repo secrets: `VSCE_PAT` (Azure DevOps, Marketplace Manage scope) and `OVSX_PAT` (open-vsx.org token; create the `I4cTime` namespace once with `npx ovsx create-namespace`).
+Pushing a `v*` tag (for example `git tag v2.1.0 && git push origin v2.1.0`) triggers `.github/workflows/release.yml`, which publishes the same `.vsix` to **both** the VS Code Marketplace and **Open VSX** (where Cursor and Kiro install from), and attaches it to a GitHub Release. Open VSX uses trusted publishing (the workflow is registered as a trusted publisher on open-vsx.org, no token). The Marketplace step needs the `VSCE_PAT` repo secret (Azure DevOps, Marketplace Manage scope) and is skipped until it exists.
 
 ## License
 
