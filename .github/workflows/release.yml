@@ -70,13 +70,20 @@ jobs:
       - name: Package
         run: npx --yes @vscode/vsce package
 
+      - name: Package Marketplace build (name quantum-fluidity)
+        run: |
+          mkdir -p marketplace
+          node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.name='quantum-fluidity';fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n')"
+          npx --yes @vscode/vsce package -o "marketplace/quantum-fluidity-$VERSION.vsix"
+          git checkout -- package.json
+
       - name: Check what is already published
         id: published
         run: |
           OVSX=$(curl -sf "https://open-vsx.org/api/I4cTime/quantum-fluidity-theme/$VERSION" >/dev/null && echo true || echo false)
           VSM=$(curl -sf -X POST "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery" \
             -H "Content-Type: application/json" -H "Accept: application/json;api-version=3.0-preview.1" \
-            -d '{"filters":[{"criteria":[{"filterType":7,"value":"I4cTime.quantum-fluidity-theme"}]}],"flags":1}' \
+            -d '{"filters":[{"criteria":[{"filterType":7,"value":"I4cTime.quantum-fluidity"}]}],"flags":1}' \
             | grep -q "\"version\":\"$VERSION\"" && echo true || echo false)
           echo "openvsx=$OVSX" >> "$GITHUB_OUTPUT"
           echo "marketplace=$VSM" >> "$GITHUB_OUTPUT"
@@ -89,7 +96,7 @@ jobs:
 
       - name: Publish to VS Code Marketplace
         if: steps.published.outputs.marketplace != 'true' && env.VSCE_PAT != ''
-        run: npx --yes @vscode/vsce publish --packagePath ./*.vsix
+        run: npx --yes @vscode/vsce publish --packagePath ./marketplace/*.vsix
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
