@@ -12,7 +12,7 @@ All notable changes to **Quantum Fluidity** are documented here.
 - **More semantic tokens.** Keywords, operators, strings, numbers, regexps and comments at the semantic layer, plus Pylance (`selfParameter`, `builtinConstant`, `magicFunction`) and rust-analyzer (`lifetime`, `selfKeyword`, `builtinAttribute`, `derive`) token types.
 - **More TextMate scopes.** YAML, TOML and INI keys in cyan; decorators and annotations; Rust lifetimes and macros; docstrings read as comments; template-literal expressions no longer inherit string pink; markdown strikethrough, fenced-code content, list bullets and rules; diff headers; log-output levels.
 - **Real previews of all four variants** in the README, plus a hero card.
-- **VS Code Marketplace listing** under the `I4cTime` publisher as `I4cTime.quantum-fluidity` (the `-theme` name is permanently reserved there by the retired `i4cdeath` listing). Open VSX stays `I4cTime.quantum-fluidity-theme`.
+- **VS Code Marketplace listing** under the `I4cTime` publisher as **Quantum Fluidity Theme**, `I4cTime.quantum-fluidity` (the original name and display name are permanently reserved there by the retired `i4cdeath` listing). Open VSX stays `I4cTime.quantum-fluidity-theme`.
 
 ### Changed
 - `package.json` now carries homepage, bugs, Q&A, sponsor, pricing and a CI badge; the project is MIT again: `LICENSE` had been switched to AGPL-3.0-only in 2.0.0's prep while `package.json` still said MIT; both now say MIT.

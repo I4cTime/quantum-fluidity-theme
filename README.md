@@ -66,7 +66,7 @@ Each role keeps its meaning across all four variants:
 2. Search for `Quantum Fluidity` and click **Install**.
 3. `Ctrl+K Ctrl+T` (or Command Palette, `Preferences: Color Theme`) and pick your variant.
 
-From the command line: `code --install-extension I4cTime.quantum-fluidity`. The Marketplace ID is `I4cTime.quantum-fluidity` (the `-theme` name is permanently reserved there by an old listing); Open VSX uses `I4cTime.quantum-fluidity-theme`. Same extension, same contents.
+From the command line: `code --install-extension I4cTime.quantum-fluidity`. The Marketplace listing is **Quantum Fluidity Theme**, ID `I4cTime.quantum-fluidity` (the original name and display name are permanently reserved there by an old listing); Open VSX uses `I4cTime.quantum-fluidity-theme`. Same extension, same contents.
 
 ### Cursor
 Cursor reads the same extension format. Search `Quantum Fluidity` in Cursor's Extensions panel (served from Open VSX), or install the `.vsix` manually (below).

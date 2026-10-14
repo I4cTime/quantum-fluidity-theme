@@ -70,10 +70,10 @@ jobs:
       - name: Package
         run: npx --yes @vscode/vsce package
 
-      - name: Package Marketplace build (name quantum-fluidity)
+      - name: Package Marketplace build (quantum-fluidity / "Quantum Fluidity Theme")
         run: |
           mkdir -p marketplace
-          node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.name='quantum-fluidity';fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n')"
+          node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.name='quantum-fluidity';p.displayName='Quantum Fluidity Theme';fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n')"
           npx --yes @vscode/vsce package -o "marketplace/quantum-fluidity-$VERSION.vsix"
           git checkout -- package.json
 
