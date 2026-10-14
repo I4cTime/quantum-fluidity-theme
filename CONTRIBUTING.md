@@ -52,4 +52,4 @@ Do **not** open a public issue for vulnerabilities - follow [SECURITY.md](SECURI
 
 ## License
 
-By contributing you agree your work is licensed under [AGPL-3.0-only](LICENSE), the same license as the project.
+By contributing you agree your work is licensed under [MIT](LICENSE), the same license as the project.

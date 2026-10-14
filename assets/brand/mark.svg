@@ -14,7 +14,7 @@
     <mask id="qbehind" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
       <rect width="512" height="512" fill="#fff"/>
       <circle cx="246" cy="246" r="130" stroke="#000" stroke-width="58"/>
-      <path d="M262 306 C 318 292, 296 366, 354 358 C 404 352, 404 404, 426 426" stroke="#000" stroke-width="58" stroke-linecap="round"/>
+      <path d="M260 300 C 312 282, 284 348, 334 344 C 384 340, 356 404, 410 398 C 434 396, 440 418, 444 434" stroke="#000" stroke-width="58" stroke-linecap="round"/>
     </mask>
     <filter id="qglow-wide" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
     <filter id="qglow-tight" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5"/></filter>
@@ -24,7 +24,7 @@
       </g>
       <g stroke="url(#qg)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="246" cy="246" r="130"/>
-        <path d="M262 306 C 318 292, 296 366, 354 358 C 404 352, 404 404, 426 426"/>
+        <path d="M260 300 C 312 282, 284 348, 334 344 C 384 340, 356 404, 410 398 C 434 396, 440 418, 444 434"/>
       </g>
       <circle cx="418" cy="152" r="17" fill="#00D1FF"/>
       <circle cx="418" cy="152" r="8" fill="#FFFFFF"/>

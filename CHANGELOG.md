@@ -14,7 +14,7 @@ All notable changes to **Quantum Fluidity** are documented here.
 - **Real previews of all four variants** in the README, plus a hero card.
 
 ### Changed
-- `package.json` now carries homepage, bugs, Q&A, sponsor, pricing and a CI badge; the license field matches the AGPL-3.0-only `LICENSE` (it still said MIT).
+- `package.json` now carries homepage, bugs, Q&A, sponsor, pricing and a CI badge; the project is MIT again: `LICENSE` had been switched to AGPL-3.0-only in 2.0.0's prep while `package.json` still said MIT; both now say MIT.
 - Copy sweep: plain hyphens instead of em dashes across the README, changelog, templates and source comments.
 - CI and release workflows install dependencies with `npm ci`; `sharp` is the only dev dependency (brand rendering).
 - The `.vsix` now excludes the brand sources, GitHub config and contributor docs.

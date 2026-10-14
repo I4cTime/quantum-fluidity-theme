@@ -6,7 +6,7 @@
     <a href="https://github.com/I4cTime/quantum-fluidity-theme/actions/workflows/ci.yml"><img src="https://github.com/I4cTime/quantum-fluidity-theme/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
     <a href="https://open-vsx.org/extension/I4cTime/quantum-fluidity-theme"><img src="https://img.shields.io/open-vsx/v/I4cTime/quantum-fluidity-theme?label=Open%20VSX&color=B266FF" alt="Open VSX version" /></a>
     <a href="https://marketplace.visualstudio.com/items?itemName=I4cTime.quantum-fluidity-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/I4cTime.quantum-fluidity-theme?label=VS%20Marketplace&color=00D1FF" alt="VS Marketplace version" /></a>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-FF0055" alt="License: AGPL-3.0" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-FF0055" alt="License: MIT" /></a>
   </p>
 </div>
 
@@ -103,7 +103,7 @@ Pushing a `v*` tag (for example `git tag v2.1.0 && git push origin v2.1.0`) trig
 
 ## License
 
-[AGPL-3.0-only](LICENSE). Made by [I4C Studio](https://i4c.studio).
+[MIT](LICENSE). Made by [I4C Studio](https://i4c.studio).
 
 ---
 
