@@ -11,6 +11,6 @@
   </defs>
   <g stroke="url(#qgs)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="246" cy="236" r="132"/>
-    <path d="M268 292 C 320 274, 292 340, 342 336 C 392 332, 364 396, 418 390 C 438 388, 444 410, 448 426"/>
+    <path stroke-width="40" d="M292 284 C 328 268, 306 324, 342 320 C 378 316, 358 370, 396 364 C 410 362, 416 376, 418 388"/>
   </g>
 </svg>
