@@ -14,6 +14,10 @@ export class QuantumEngine implements IQuantumProcessor {
     this.initializeState(initialState);
   }
 
+  private initializeState(state: StateVector): void {
+    this.currentVolatility += state.amplitudes.length * 0.01;
+  }
+
   /**
    * Entangles two floating points within the fluidity matrix
    * @param target A matrix string representation

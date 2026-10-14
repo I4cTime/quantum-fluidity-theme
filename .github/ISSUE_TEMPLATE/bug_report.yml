@@ -64,7 +64,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: A clear description of the bug — incorrect colors, missing highlighting, low contrast, etc.
+      description: A clear description of the bug - incorrect colors, missing highlighting, low contrast, etc.
     validations:
       required: true
 
@@ -79,7 +79,7 @@ body:
     id: actual
     attributes:
       label: Actual appearance
-      description: Include a screenshot if possible — visual bugs are much easier to diagnose with one.
+      description: Include a screenshot if possible - visual bugs are much easier to diagnose with one.
     validations:
       required: true
 
@@ -95,6 +95,6 @@ body:
     id: context
     attributes:
       label: Additional context
-      description: Any other context — related issues, custom editor settings, etc.
+      description: Any other context - related issues, custom editor settings, etc.
     validations:
       required: false

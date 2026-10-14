@@ -1,19 +1,19 @@
 /**
- * Quantum Fluidity — palette definitions.
+ * Quantum Fluidity - palette definitions.
  *
  * Every theme variant is a flat palette object consumed by template.mjs.
  * Edit colors here, then `npm run build` to regenerate themes/*.json.
  *
  * Role guide:
- *   bg / bgAlt / container / containerHover — surface ramp (Obsidian Void → Midnight Mist)
- *   bgTop  — chrome above the editor (title bar, tab strip): "light falls from above"
- *   bgSide — sidebar, activity bar, panel, terminal: one subtle step off the editor
- *   accent      — UI energy color (cursor, focus, active tab) and functions/methods
- *   violet      — keywords, operators, badges ("agentic" depth)
- *   green       — classes, types, additions
- *   amber       — numbers, constants, warnings
- *   pink        — strings, tags, errors
- *   brackets    — 6-level nesting gradient (accent → violet → pink)
+ *   bg / bgAlt / container / containerHover - surface ramp (Obsidian Void → Midnight Mist)
+ *   bgTop  - chrome above the editor (title bar, tab strip): "light falls from above"
+ *   bgSide - sidebar, activity bar, panel, terminal: one subtle step off the editor
+ *   accent      - UI energy color (cursor, focus, active tab) and functions/methods
+ *   violet      - keywords, operators, badges ("agentic" depth)
+ *   green       - classes, types, additions
+ *   amber       - numbers, constants, warnings
+ *   pink        - strings, tags, errors
+ *   brackets    - 6-level nesting gradient (accent → violet → pink)
  */
 
 export const palettes = [
@@ -69,7 +69,7 @@ export const palettes = [
     },
   },
 
-  // ── Dark 2: Midnight Mist — softer navy surfaces, gentler neons ────────
+  // ── Dark 2: Midnight Mist - softer navy surfaces, gentler neons ────────
   {
     id: 'mist',
     name: 'Quantum Fluidity Mist',
@@ -121,7 +121,7 @@ export const palettes = [
     },
   },
 
-  // ── Light 1: Ghost White — crisp, cool, high contrast ──────────────────
+  // ── Light 1: Ghost White - crisp, cool, high contrast ──────────────────
   {
     id: 'light',
     name: 'Quantum Fluidity Light',
@@ -173,7 +173,7 @@ export const palettes = [
     },
   },
 
-  // ── Light 2: Dawn — warm paper surfaces, earthy quantum accents ─────────
+  // ── Light 2: Dawn - warm paper surfaces, earthy quantum accents ─────────
   {
     id: 'dawn',
     name: 'Quantum Fluidity Dawn',

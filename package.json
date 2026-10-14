@@ -1,15 +1,28 @@
 {
   "name": "quantum-fluidity-theme",
   "displayName": "Quantum Fluidity",
-  "description": "A crisp, high-contrast theme family with luminous accents — 2 dark and 2 light variants for VS Code, Cursor, and Kiro.",
-  "version": "2.0.0",
+  "description": "A crisp, high-contrast theme family with luminous accents: 2 dark and 2 light variants for VS Code, Cursor and Kiro, tuned for AI-first editing.",
+  "version": "2.1.0",
   "publisher": "I4cTime",
+  "author": {
+    "name": "Nathan Stewart",
+    "url": "https://i4c.studio"
+  },
   "license": "MIT",
   "icon": "icon.png",
+  "homepage": "https://github.com/I4cTime/quantum-fluidity-theme#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/I4cTime/quantum-fluidity-theme"
   },
+  "bugs": {
+    "url": "https://github.com/I4cTime/quantum-fluidity-theme/issues"
+  },
+  "qna": "https://github.com/I4cTime/quantum-fluidity-theme/issues",
+  "sponsor": {
+    "url": "https://ko-fi.com/i4ctime"
+  },
+  "pricing": "Free",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -25,12 +38,21 @@
     "quantum",
     "cursor",
     "kiro",
-    "high contrast"
+    "high contrast",
+    "agentic",
+    "copilot"
   ],
   "galleryBanner": {
     "color": "#050505",
     "theme": "dark"
   },
+  "badges": [
+    {
+      "url": "https://github.com/I4cTime/quantum-fluidity-theme/actions/workflows/ci.yml/badge.svg",
+      "href": "https://github.com/I4cTime/quantum-fluidity-theme/actions/workflows/ci.yml",
+      "description": "CI"
+    }
+  ],
   "contributes": {
     "themes": [
       {
@@ -57,10 +79,13 @@
   },
   "scripts": {
     "build": "node src/build.mjs",
-    "build:icon": "bash src/build-icon.sh",
+    "build:brand": "node src/build-brand.mjs",
     "check": "node src/check-contrast.mjs",
     "package": "npm run build && npm run check && npx @vscode/vsce package",
     "publish:vscode": "npx @vscode/vsce publish",
     "publish:openvsx": "npx ovsx publish"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }
