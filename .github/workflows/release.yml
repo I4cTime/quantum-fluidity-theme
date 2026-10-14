@@ -8,22 +8,38 @@ name: Release
 #              (https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
 #   OVSX_PAT - open-vsx.org access token; the I4cTime namespace must exist
 #              (npx ovsx create-namespace I4cTime -p <token>, one-time)
+#
+# Every publish step is idempotent: a version that already exists on a
+# marketplace is skipped, so a run can be repeated for the same tag (for
+# example after adding a secret) with "Run workflow" -> tag, or:
+#   gh workflow run release.yml -f tag=v2.1.0
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to (re)publish, e.g. v2.1.0"
+        required: true
+        type: string
 
 permissions:
   contents: write # create the GitHub Release + upload the .vsix
   id-token: write # Open VSX trusted publishing (OIDC)
 
 concurrency:
-  group: release-${{ github.ref }}
+  group: release-${{ inputs.tag || github.ref_name }}
+
+env:
+  TAG: ${{ inputs.tag || github.ref_name }}
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag || github.ref }}
 
       - uses: actions/setup-node@v7
         with:
@@ -35,11 +51,12 @@ jobs:
       - name: Verify tag matches package.json version
         run: |
           PKG_VERSION="$(node -p "require('./package.json').version")"
-          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          TAG_VERSION="${TAG#v}"
           if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
-            echo "Tag $GITHUB_REF_NAME does not match package.json version $PKG_VERSION" >&2
+            echo "Tag $TAG does not match package.json version $PKG_VERSION" >&2
             exit 1
           fi
+          echo "VERSION=$PKG_VERSION" >> "$GITHUB_ENV"
 
       - name: Build themes
         run: npm run build
@@ -53,23 +70,41 @@ jobs:
       - name: Package
         run: npx --yes @vscode/vsce package
 
+      - name: Check what is already published
+        id: published
+        run: |
+          OVSX=$(curl -sf "https://open-vsx.org/api/I4cTime/quantum-fluidity-theme/$VERSION" >/dev/null && echo true || echo false)
+          VSM=$(curl -sf -X POST "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery" \
+            -H "Content-Type: application/json" -H "Accept: application/json;api-version=3.0-preview.1" \
+            -d '{"filters":[{"criteria":[{"filterType":7,"value":"I4cTime.quantum-fluidity-theme"}]}],"flags":1}' \
+            | grep -q "\"version\":\"$VERSION\"" && echo true || echo false)
+          echo "openvsx=$OVSX" >> "$GITHUB_OUTPUT"
+          echo "marketplace=$VSM" >> "$GITHUB_OUTPUT"
+          echo "Open VSX has $VERSION: $OVSX; Marketplace has $VERSION: $VSM"
+
       # Cursor and Kiro install from Open VSX - publish the identical .vsix there.
       - name: Publish to Open VSX (trusted publishing)
+        if: steps.published.outputs.openvsx != 'true'
         run: npx --yes ovsx@^1.2 publish --trusted-publishing ./*.vsix
 
       - name: Publish to VS Code Marketplace
-        if: env.VSCE_PAT != ''
+        if: steps.published.outputs.marketplace != 'true' && env.VSCE_PAT != ''
         run: npx --yes @vscode/vsce publish --packagePath ./*.vsix
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
       - name: Marketplace skipped
-        if: env.VSCE_PAT == ''
+        if: steps.published.outputs.marketplace != 'true' && env.VSCE_PAT == ''
         run: echo "::notice::VSCE_PAT secret not set, skipped the VS Code Marketplace publish."
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
-      - name: Create GitHub Release with .vsix asset
-        run: gh release create "$GITHUB_REF_NAME" ./*.vsix --generate-notes
+      - name: Create or update the GitHub Release with the .vsix asset
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" ./*.vsix --clobber
+          else
+            gh release create "$TAG" ./*.vsix --generate-notes
+          fi
         env:
           GH_TOKEN: ${{ github.token }}
