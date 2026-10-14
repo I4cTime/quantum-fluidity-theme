@@ -5,7 +5,7 @@
   <p>
     <a href="https://github.com/I4cTime/quantum-fluidity-theme/actions/workflows/ci.yml"><img src="https://github.com/I4cTime/quantum-fluidity-theme/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
     <a href="https://open-vsx.org/extension/I4cTime/quantum-fluidity-theme"><img src="https://img.shields.io/open-vsx/v/I4cTime/quantum-fluidity-theme?label=Open%20VSX&color=B266FF" alt="Open VSX version" /></a>
-    <a href="https://marketplace.visualstudio.com/items?itemName=I4cTime.quantum-fluidity-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/I4cTime.quantum-fluidity-theme?label=VS%20Marketplace&color=00D1FF" alt="VS Marketplace version" /></a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=I4cTime.quantum-fluidity"><img src="https://img.shields.io/visual-studio-marketplace/v/I4cTime.quantum-fluidity?label=VS%20Marketplace&color=00D1FF" alt="VS Marketplace version" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-FF0055" alt="License: MIT" /></a>
   </p>
 </div>
@@ -65,6 +65,8 @@ Each role keeps its meaning across all four variants:
 1. Open the Extensions panel (`Ctrl+Shift+X` / `Cmd+Shift+X`).
 2. Search for `Quantum Fluidity` and click **Install**.
 3. `Ctrl+K Ctrl+T` (or Command Palette, `Preferences: Color Theme`) and pick your variant.
+
+From the command line: `code --install-extension I4cTime.quantum-fluidity`. The Marketplace ID is `I4cTime.quantum-fluidity` (the `-theme` name is permanently reserved there by an old listing); Open VSX uses `I4cTime.quantum-fluidity-theme`. Same extension, same contents.
 
 ### Cursor
 Cursor reads the same extension format. Search `Quantum Fluidity` in Cursor's Extensions panel (served from Open VSX), or install the `.vsix` manually (below).
